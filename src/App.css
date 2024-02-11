@@ -1,0 +1,26 @@
+.app__itemsContainer {
+  -ms-scroll-snap-type: y mandatory;
+      scroll-snap-type: y mandatory;
+  overflow: auto;
+  height: 100vh;
+}
+/*# sourceMappingURL=App.css.map */
+
+.overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background-color: rgba(0, 0, 0, 0.8); /* Adjust the background color and opacity */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000; /* Ensure the overlay is on top of other elements */
+}
+
+.overlay img {
+  width: 2000px; /* Adjust the width of the GIF */
+  height: auto;
+}
+

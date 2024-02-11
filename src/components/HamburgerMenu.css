@@ -1,0 +1,144 @@
+/* HamburgerMenu.css */
+@import url("https://fonts.googleapis.com/css2?family=Roboto&display=swap");
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  background: #78a8ca;
+  padding: 0em;
+  display: flex;
+  justify-content: flex-end;
+  font-family: "Roboto", sans-serif;
+
+  @media (max-height: 500px) {
+    font-size: 60%;
+  }
+}
+
+.hamburger-button {
+  margin-top: 0px;
+  outline: none;
+  border: none;
+  cursor: pointer;
+  width: 3em;
+  height: 2em;
+  position: relative;
+  z-index: 1000; /* Ensure it's above other components */
+  background-color: transparent;
+  background-image: url(../assets/hamburger.svg); /* Updated SVG link */
+  background-repeat: no-repeat;
+  background-position: center center;
+  background-size: contain;
+  -webkit-tap-highlight-color: transparent;
+
+  &:hover {
+    background-image: url(../assets/hamburgermouseover.svg); /* Hover effect */
+  }
+}
+
+.panel {
+  max-width: 500px;
+  background-color: #ffffffd1;
+  background-size: 117px 188px;
+  transition: all 0.4s cubic-bezier(0.42, 0, 0.34, 1.01);
+  position: fixed;
+  z-index: 1001; /* Ensure it's above the hamburger button */
+  right: -100%;
+  top: 0;
+  height: 100%;
+  width: 100%;
+  visibility: hidden;
+  opacity: 0;
+  padding: 3em;
+  display: flex;
+  justify-content: center; /* Center items horizontally */
+  align-items: center; /* Center items vertically */
+
+  &.open {
+    visibility: visible;
+    width: 100%;
+    right: 0;
+    opacity: 1;
+  }
+}
+
+ul {
+  margin-right: 40px;
+  margin-bottom: 50px;
+  padding: 0; /* Remove default padding */
+
+  li {
+    list-style: none;
+    font-size: 2em;
+    text-align: right;
+
+    & + li {
+      margin-top: 1em;
+    }
+
+    a {
+      text-decoration: none;
+      color: rgb(0, 0, 0);
+
+      &:hover {
+        color: #b00000;
+      }
+    }
+  }
+}
+
+.panel li img {
+  width: 100px; /* Adjust the width as needed */
+  height: 60px; /* Adjust the height as needed */
+  margin-right: 30px; /* Add some right margin if needed */
+  vertical-align: middle; /* Align the images vertically in the middle */
+}
+
+/* Animation for fading in menu items */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(-10px); /* Adjust the initial position if needed */
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.panel li {
+  opacity: 0;
+}
+
+.fade-in li {
+  animation: fadeIn 0.5s ease forwards; /* Adjust the duration and timing function as needed */
+}
+
+.fade-in li:nth-child(1) {
+  animation-delay: 0.1s; /* Adjust the delay for each item */
+}
+
+.fade-in li:nth-child(2) {
+  animation-delay: 0.2s; /* Adjust the delay for each item */
+}
+
+/* Add more rules for other items as needed */
+
+.panel li:nth-child(3) {
+  animation-delay: 0.3s; /* Adjust the delay for each item */
+}
+
+.panel li:nth-child(4) {
+  animation-delay: 0.4s; /* Adjust the delay for each item */
+}
+
+.panel li:nth-child(5) {
+  animation-delay: 0.5s; /* Adjust the delay for each item */
+}
+
+.panel li:nth-child(6) {
+  animation-delay: 0.6s; /* Adjust the delay for each item */
+}
+

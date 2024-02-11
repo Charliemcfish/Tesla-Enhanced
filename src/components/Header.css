@@ -1,0 +1,107 @@
+.header {
+  display: flex;
+  background-color: transparent;
+  background: none;
+  position: fixed;
+  width: 100vw;
+  top: 0;
+  margin-top: 15px;
+  font-weight: 500;
+  justify-content: center;
+}
+
+.header__logo {
+  height: 48px;
+  width: 200px;
+  margin-left: 50px;
+}
+
+.header__center {
+  display: flex;
+  flex-direction: column; /* Stack items vertically */
+  align-items: center; /* Center items horizontally */
+}
+
+.header__dropdown {
+  position: relative;
+}
+
+.header__dropdownButton {
+  background: none;
+  border: none;
+  cursor: pointer;
+  margin-top: 10px; /* Adjust margin-top as needed */
+}
+
+.header__dropdownContent {
+  position: absolute;
+  top: 100%;
+  right: 0;
+  background-color: rgba(23, 26, 32, 0.8);
+  border-radius: 8px;
+  padding: 8px;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  visibility: hidden;
+  opacity: 0;
+  transition: visibility 0.3s, opacity 0.3s;
+}
+
+.header__dropdownContent p {
+  margin: 0;
+  color: #fff;
+  cursor: pointer;
+  opacity: 0;
+  transform: translateY(-15px);
+  transition: opacity 0.5s, transform 0.5s;
+  margin-right: 50px;
+}
+
+.header__dropdownButton:hover ~ .header__dropdownContent {
+  visibility: visible;
+  opacity: 1;
+}
+
+.header__dropdownButton:hover ~ .header__dropdownContent p {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.header__right {
+  display: flex;
+  align-items: center;
+}
+
+.header__right > p {
+  margin: 10px 20px 10px 10px;
+}
+
+.header__right p:hover {
+  color: #ffcd00;
+  cursor: pointer;
+}
+
+.button:hover {
+  background-color: black;
+}
+
+.button:hover > a {
+  color: white;
+  cursor: pointer;
+}
+
+.button__white:hover {
+  background-color: black;
+}
+
+.button__white:hover > a {
+  color: white;
+  cursor: pointer;
+}
+
+.header__dropdownButton:hover ~ .header__dropdownContent,
+.header__dropdownContent:hover {
+  visibility: visible;
+  opacity: 1;
+} 
